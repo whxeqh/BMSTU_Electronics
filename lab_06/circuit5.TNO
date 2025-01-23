@@ -1,0 +1,136 @@
+********************************************************************************
+***                       Micro-Cap 12.2.0.0 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                      Transient Analysis of circuit5                      ***
+***                           08.12.2024 20:25:47                            ***
+********************************************************************************
+Limits
+======
+Maximum Run Time           30m
+Output Start Time (tstart) 20m
+Maximum Time Step          1u
+Number of Points           5100
+Temperature                Linear 30
+Retrace Runs               1
+Run Options                Normal
+State Variables            Zero
+Operating Point            On
+Operating Point Only       Off
+Auto Scale Ranges          On
+Accumulate Plots           Off
+Fixed Time Step            Off
+Periodic Steady State      Off
+Ignore Expression Errors   Off
+
+
+*****************************************************
+***                Temperature=30                 ***
+*****************************************************
+
+Temperature=30
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1          -150.609m  2           -12.000   3          -663.225m 
+4          -150.609m  5          -663.225m 
+
+
+Operating Point for Devices of Type Bipolar Junction Transistors PNP
+====================================================================
+Instance:               Q1            Q2
+Using model:       Q2T505B       Q2T505B
+
+Beta Terms:
+BETADC             53.306        53.306 
+BETAAC            114.946       114.946 
+
+Capacitance Terms:
+CPI                 2.428n        2.428n
+CMU                 1.654n        1.654n
+CBX                 0.000         0.000 
+CJS                 0.000         0.000 
+
+Conductance Terms:
+GM                453.464m      453.464m
+
+Current Terms:
+IB                222.290u      222.290u
+IC                 11.849m       11.849m
+
+Resistance Terms:
+RPI               253.484       253.484 
+RX                  8.300         8.300 
+RO                419.657       419.657 
+
+Voltage Terms:
+VBE              -663.225m     -663.225m
+VBC              -512.615m     -512.615m
+VCE              -150.609m     -150.609m
+
+Frequency Terms:
+FT               17.680MEG     17.680MEG
+
+Power DC Terms:
+PD                  1.932m        1.932m
+PS                  0.000         0.000 
+
+DC Pin Currents:
+Ib               -222.290u     -222.290u
+Ic                -11.849m      -11.849m
+Ie                 12.072m       12.072m
+Is                  0.000         0.000 
+
+Condition:
+State                  SAT           SAT
+
+Device Variables:
+area                1.000         1.000 
+vbe                 0.000         0.000 
+vce                 0.000         0.000 
+
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                R1            R2            R3            R4
+V                   11.849        11.849        11.337        11.337 
+Power DC Terms:
+PD                 140.408m      140.408m        2.520m        2.520m
+
+DC Pin Currents:
+Ir                  11.849m       11.849m      222.290u      222.290u
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000 
+
+
+
+Operating Point for Devices of Type Capacitor
+=============================================
+Instance:                C1            C2
+V                  512.615m     -512.615m
+Power DC Terms:
+PS                   0.000         0.000 
+
+DC Pin Currents:
+Ic                   0.000         0.000 
+
+Device Variables:
+ic                   0.000         0.000 
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:               V1
+V                  12.000 
+Power DC Terms:
+PG                289.720m
+
+DC Pin Currents:
+ISource           -24.143m
+
+

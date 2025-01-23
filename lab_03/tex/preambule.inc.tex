@@ -1,0 +1,150 @@
+%----------------------- Преамбула -----------------------
+\documentclass[utf8x, 14pt, oneside, a4paper]{extreport}
+
+\usepackage{pgfplots}
+
+\sloppy
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{placeins} % в преамбуле
+
+\usepackage{minted}
+% Настройка для minted
+\setminted{linenos, frame=single} % Рамка и фон для всех листингов
+\captionsetup[listing]{labelformat=empty}
+
+% Команда для создания подписи с "Листинг n"
+\newcommand{\listingcaption}[1]{%
+	\refstepcounter{figure} % Увеличиваем счётчик для правильной нумерации
+	\caption{Листинг \thefigure: #1}%
+}
+\usepackage{extsizes} % Для добавления в параметры класса документа 14pt
+
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{setspace}
+
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\floatname{algorithm}{Алгоритм}
+
+% Для работы с несколькими языками и шрифтом Times New Roman по-умолчанию
+\usepackage[english,russian]{babel}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% ГОСТовские настройки для полей и абзацев
+\usepackage[left=30mm,right=10mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{misccorr}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\setlist[enumerate,1]{label=\arabic*.} % Основной уровень
+\setlist[enumerate,2]{label=\arabic{enumi}.\arabic*.} % Вложенный уровень
+\setlist[enumerate,3]{label=\alph*)}
+
+\setlength{\parindent}{1.25cm}
+\renewcommand{\baselinestretch}{1.5}
+\setlist{nolistsep} % Отсутствие отступов между элементами \enumerate и \itemize
+
+% Дополнительное окружения для подписей
+\usepackage{array}
+\newenvironment{signstabular}[1][1]{
+	\renewcommand*{\arraystretch}{#1}
+	\tabular
+}{
+	\endtabular
+}
+
+
+\makeatletter
+\renewcommand\LARGE{\@setfontsize\LARGE{22pt}{20}}
+\renewcommand\Large{\@setfontsize\Large{20pt}{20}}
+\renewcommand\large{\@setfontsize\large{16pt}{20}}
+\makeatother
+% Переопределение стандартных \chapter, \section, \subsection, \subsubsection по ГОСТу;
+\RequirePackage{titlesec}
+\titleformat{\chapter}[block]{\hspace{\parindent}\large\bfseries}{\thechapter}{0.5em}{\large\bfseries\raggedright}
+\titleformat{name=\chapter,numberless}[block]{\hspace{\parindent}}{}{0pt}{\large\bfseries\centering}
+\titleformat{\section}[block]{\hspace{\parindent}\large\bfseries}{\thesection}{0.5em}{\large\bfseries\raggedright}
+\titleformat{\subsection}[block]{\hspace{\parindent}\large\bfseries}{\thesubsection}{0.5em}{\large\bfseries\raggedright}
+\titleformat{\subsubsection}[block]{\hspace{\parindent}\large\bfseries}{\thesubsection}{0.5em}{\large\bfseries\raggedright}
+\titlespacing{\chapter}{12.5mm}{-22pt}{10pt}
+\titlespacing{\section}{12.5mm}{10pt}{10pt}
+\titlespacing{\subsection}{12.5mm}{10pt}{10pt}
+\titlespacing{\subsubsection}{12.5mm}{10pt}{10pt}
+
+% Работа с изображениями и таблицами; переопределение названий по ГОСТу
+\usepackage{caption}
+\captionsetup[figure]{name={Рисунок},labelsep=endash}
+\captionsetup[table]{singlelinecheck=false, labelsep=endash}
+
+\usepackage{graphicx}
+\usepackage{diagbox} % Диагональное разделение первой ячейки в таблицах
+
+% Цвета для гиперссылок и листингов
+\usepackage{color}
+
+% Гиперссылки \toc с кликабельностью
+\usepackage{hyperref}
+
+\hypersetup{
+	linktoc=all,
+	linkcolor=black,
+	colorlinks=true,
+}
+
+% Листинги
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+\usepackage{color} % Цвета для гиперссылок и листингов
+\definecolor{comment}{rgb}{0,0.5,0}
+\definecolor{plain}{rgb}{0.2,0.2,0.2}
+\definecolor{string}{rgb}{0.91,0.45,0.32}
+\hypersetup{citecolor=blue}
+\hypersetup{citecolor=black}
+
+\DeclareCaptionLabelSeparator{line}{\ --\ }
+\DeclareCaptionFont{white}{\color{white}}
+
+\usepackage{ulem} % Нормальное нижнее подчеркивание
+\usepackage{hhline} % Двойная горизонтальная линия в таблицах
+\usepackage[,table]{totalcount} % Подсчет изображений, таблиц
+\usepackage{rotating} % Поворот изображения вместе с названием
+\usepackage{lastpage} % Для подсчета числа страниц
+
+%\captionsetup[figure]{justification=centering,labelsep=dash}
+%\captionsetup[table]{labelsep=dash,justification=raggedright,singlelinecheck=off}
+
+\makeatletter
+\renewcommand\@biblabel[1]{#1.}
+\makeatother
+
+\onehalfspacing
+
+\pgfplotsset{width=0.85\linewidth, height=0.5\columnwidth}
+
+\linespread{1.3}
+
+\parindent=1.25cm
+
+%\LetLtxMacro\itemold\item
+%\renewcommand{\item}{\itemindent0.75cm\itemold}
+
+\def\labelitemi{---}
+\setlist[itemize]{leftmargin=1.25cm, itemindent=0.65cm}
+\setlist[enumerate]{leftmargin=1.25cm, itemindent=0.55cm}
+
+
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{slashbox}

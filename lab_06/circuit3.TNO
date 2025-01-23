@@ -1,0 +1,182 @@
+********************************************************************************
+***                       Micro-Cap 12.2.0.0 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                      Transient Analysis of circuit3                      ***
+***                           08.12.2024 20:24:59                            ***
+********************************************************************************
+Limits
+======
+Maximum Run Time           10u
+Output Start Time (tstart) 0
+Maximum Time Step          10n
+Number of Points           5100
+Temperature                Linear 27
+Retrace Runs               1
+Run Options                Normal
+State Variables            Zero
+Operating Point            On
+Operating Point Only       Off
+Auto Scale Ranges          On
+Accumulate Plots           Off
+Fixed Time Step            Off
+Periodic Steady State      Off
+Ignore Expression Errors   Off
+
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1             0.000   2          -131.156u  3            -5.000  
+4             0.000   5            -5.000  
+
+
+Operating Point for Devices of Type Diode
+=========================================
+Instance:               D1
+Using model:        1N5711
+
+Capacitance Terms:
+CAP               641.927f
+
+Current Terms:
+ID               -218.537n
+
+Resistance Terms:
+REQ              22.961MEG
+
+Voltage Terms:
+VD                 -5.000 
+
+Power DC Terms:
+PD                  1.093u
+PS                  0.000 
+
+DC Pin Currents:
+Id               -218.537n
+
+Condition:
+State                  OFF
+
+Device Variables:
+area                1.000 
+ic                  0.000 
+
+
+
+Operating Point for Devices of Type Bipolar Junction Transistors PNP
+====================================================================
+Instance:               Q1
+Using model:       Q2T505B
+
+Beta Terms:
+BETADC             -1.096 
+BETAAC            127.159m
+
+Capacitance Terms:
+CPI               474.332p
+CMU                30.202p
+CBX                 0.000 
+CJS                 0.000 
+
+Conductance Terms:
+GM                  3.132p
+
+Current Terms:
+IB                -55.658p
+IC                 60.998p
+
+Resistance Terms:
+RPI                40.602G
+RX                  8.300 
+RO                906.752G
+
+Voltage Terms:
+VBE              -131.156u
+VBC                 5.000 
+VCE                -5.000 
+
+Frequency Terms:
+FT                987.945u
+
+Power DC Terms:
+PD                304.980p
+PS                  0.000 
+
+DC Pin Currents:
+Ib                 55.658p
+Ic                -60.998p
+Ie                  5.341p
+Is                  0.000 
+
+Condition:
+State                  OFF
+
+Device Variables:
+area                1.000 
+vbe                 0.000 
+vce                 0.000 
+
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                R1            R2            R3
+V                  131.156u      -65.579u        0.000 
+Power DC Terms:
+PD                  28.670p       14.336p        0.000 
+
+DC Pin Currents:
+Ir                 218.593n     -218.598n        0.000 
+
+Device Variables:
+tc1                  0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000 
+
+
+
+Operating Point for Devices of Type Capacitor
+=============================================
+Instance:                C1            C2
+V                   -5.000       131.156u
+Power DC Terms:
+PS                   0.000         0.000 
+
+DC Pin Currents:
+Ic                   0.000         0.000 
+
+Device Variables:
+ic                   0.000         0.000 
+
+
+
+Operating Point for Devices of Type Pulse
+=========================================
+Instance:                V1
+Using model:          PULSE
+V                    0.000 
+Power DC Terms:
+PG                   0.000 
+
+DC Pin Currents:
+ISource           -218.593n
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:               V2
+V                   5.000 
+Power DC Terms:
+PG                  1.093u
+
+DC Pin Currents:
+ISource          -218.598n
+
+
